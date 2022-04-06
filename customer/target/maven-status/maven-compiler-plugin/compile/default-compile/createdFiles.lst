@@ -1,0 +1,7 @@
+it\luca\customer\dto\CustomerRegistrationRequest.class
+it\luca\customer\model\Customer.class
+it\luca\customer\CustomerApplication.class
+it\luca\customer\model\Customer$CustomerBuilder.class
+it\luca\customer\controller\CustomerController.class
+it\luca\customer\repository\CustomerRepository.class
+it\luca\customer\services\CustomerService.class
