@@ -1,15 +1,15 @@
-package it.luca.customer;
+package it.luca.fraud;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-@EnableAutoConfiguration
 @EnableEurekaClient
-public class CustomerApplication {
+public class FraudApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(CustomerApplication.class,args);
+        SpringApplication.run(FraudApplication.class,args);
     }
+
 }

@@ -1,15 +1,20 @@
 package it.luca.customer.services;
 
+import it.luca.customer.dto.FraudResponse;
 import it.luca.customer.model.Customer;
 import it.luca.customer.dto.CustomerRegistrationRequest;
 import it.luca.customer.repository.CustomerRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 @Service
-public record CustomerService(CustomerRepository customerRepository) {
+@AllArgsConstructor
+public class CustomerService {
 
-
+    private final CustomerRepository customerRepository;
+    private final RestTemplate restTemplate;
 
     public void registerCustomer(CustomerRegistrationRequest request){
         Customer customer = Customer.builder()
@@ -18,9 +23,18 @@ public record CustomerService(CustomerRepository customerRepository) {
                 .firstName(request.firstName())
                 .build();
 
-        customerRepository.save(customer);
 
+        customerRepository.saveAndFlush(customer);
 
+        FraudResponse response = restTemplate.getForObject(
+                "http://FRAUD/api/v1/fraud-check/{customerId}",
+                FraudResponse.class,
+                customer.getId()
+        );
+
+        if(response.isFrauster()){
+            throw new IllegalStateException("Fraudster");
+        }
 
     }
 }

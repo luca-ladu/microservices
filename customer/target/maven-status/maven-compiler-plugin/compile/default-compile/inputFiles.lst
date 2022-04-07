@@ -1,6 +1,8 @@
+C:\Dev\Microservizi\microservices\customer\src\main\java\it\luca\customer\configuration\CustomerConfig.java
 C:\Dev\Microservizi\microservices\customer\src\main\java\it\luca\customer\repository\CustomerRepository.java
 C:\Dev\Microservizi\microservices\customer\src\main\java\it\luca\customer\model\Customer.java
 C:\Dev\Microservizi\microservices\customer\src\main\java\it\luca\customer\controller\CustomerController.java
 C:\Dev\Microservizi\microservices\customer\src\main\java\it\luca\customer\dto\CustomerRegistrationRequest.java
+C:\Dev\Microservizi\microservices\customer\src\main\java\it\luca\customer\dto\FraudResponse.java
 C:\Dev\Microservizi\microservices\customer\src\main\java\it\luca\customer\CustomerApplication.java
 C:\Dev\Microservizi\microservices\customer\src\main\java\it\luca\customer\services\CustomerService.java
